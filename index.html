@@ -11,12 +11,11 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px}
 .app{display:flex;min-height:100vh}
-.side{width:230px;background:var(--side);color:var(--side-ink);padding:20px 12px;position:sticky;top:0;height:100vh;flex:none;display:flex;flex-direction:column}
-.logo{margin:0 6px 22px}.logo img{display:block;width:100%;height:auto;background:#000;border-radius:10px;padding:10px 12px}.logo .ls{color:var(--side-ink);font-size:11px;letter-spacing:2px;text-align:center;margin-top:8px}
-.sheet .head img{height:64px;width:auto;display:block;margin-bottom:6px}
-.side button.nav{display:block;width:100%;text-align:left;background:none;border:0;color:var(--side-ink);padding:11px 12px;border-radius:8px;font-size:14px;cursor:pointer;margin:2px 0}
-.side button.nav:hover{background:#ffffff14;color:#fff}.side button.nav.on{background:#ffffff1f;color:#fff;font-weight:600}
-.side .who{margin-top:auto;font-size:12px;padding:10px}.side select{width:100%;margin-top:6px}
+.side{width:236px;background:var(--side);color:var(--side-ink);padding:20px 12px;position:sticky;top:0;height:100vh;flex:none;display:flex;flex-direction:column;overflow:auto}
+.logo{margin:0 6px 18px}.logo img{display:block;width:100%;height:auto;background:#000;border-radius:10px;padding:10px 12px}.logo .ls{color:var(--side-ink);font-size:11px;letter-spacing:2px;text-align:center;margin-top:8px}
+.side button.nav{display:block;width:100%;text-align:left;background:#ffffff0a;border:1px solid #ffffff26;color:var(--side-ink);padding:10px 12px;border-radius:9px;font-size:14px;cursor:pointer;margin:6px 0}
+.side button.nav:hover{background:#ffffff18;color:#fff}.side button.nav.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.side .who{margin-top:auto;font-size:12px;padding:10px 4px 0}.side select{width:100%;margin-top:6px}
 .main{flex:1;min-width:0;padding:24px 30px 60px}
 .demo{background:var(--warnbg);color:var(--warn);border-radius:8px;padding:9px 12px;font-size:12px;margin-bottom:18px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
 h1{margin:0 0 4px;font-size:24px}.sub{color:var(--muted);margin-bottom:20px}
@@ -28,9 +27,9 @@ h2{font-size:16px;margin:0 0 12px}
 .panel{margin-bottom:14px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-width:0}
-input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .grow{flex:1;min-width:160px}
-.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:9px 14px;font-weight:700;cursor:pointer;font:inherit;font-weight:700}
+.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:9px 14px;cursor:pointer;font:inherit;font-weight:700}
 .btn.s{background:var(--panel);color:var(--ink);border:1px solid var(--line);font-weight:600}.btn.d{background:var(--badbg);color:var(--bad)}.btn.sm{padding:5px 9px;font-size:12px}
 table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}th{color:var(--muted);font-weight:600;font-size:12px}
 tr.click{cursor:pointer}tr.click:hover td{background:var(--bg)}
@@ -42,19 +41,24 @@ td.n,th.n{text-align:right;white-space:nowrap}
 .muted{color:var(--muted)}.right{text-align:right}
 .hit{padding:9px 10px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;gap:8px}.hit:hover{background:var(--bg)}
 .hits{max-height:230px;overflow:auto;border:1px solid var(--line);border-radius:8px;margin-bottom:12px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid2 label{display:block;font-size:12px;color:var(--muted)}.grid2 input,.grid2 select{width:100%;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid2 label{display:block;font-size:12px;color:var(--muted)}.grid2 input,.grid2 select,.grid2 textarea{width:100%;margin-top:4px}
 .tot{display:flex;justify-content:space-between;padding:6px 0}.tot.g{font-size:18px;font-weight:800;border-top:1px solid var(--line);margin-top:6px;padding-top:10px}
+.chips{display:inline-flex;gap:4px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:99px;padding:3px 9px;font-size:12px;cursor:pointer;font-family:inherit}.chip.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
 .modalbg{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
 .modal{background:var(--panel);border-radius:14px;max-width:760px;width:100%;max-height:92vh;overflow:auto;padding:22px}
 .last{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:11px 13px;margin:12px 0}
 .sheet{background:#fff;color:#111;max-width:794px;margin:0 auto;padding:36px 40px;border:1px solid #ccc;position:relative;min-height:600px}
 .sheet table th{color:#444}.sheet th,.sheet td{border-bottom:1px solid #ddd}
-.sheet .head{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding-bottom:12px;margin-bottom:14px}
+.sheet .head{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding-bottom:12px;margin-bottom:14px;gap:12px}
+.sheet .head img{height:64px;width:auto;display:block;margin-bottom:6px}
 .sheet h3{margin:0;font-size:22px;letter-spacing:2px}
 .sheet .stamp{display:flex;justify-content:space-between;margin-top:50px;color:#444;font-size:12px}
 .sheet .iptal{position:absolute;top:35%;left:15%;font-size:80px;color:#b4231855;transform:rotate(-20deg);font-weight:800;border:6px solid #b4231855;padding:0 20px}
 .empty{color:var(--muted);padding:20px;text-align:center}
-@media(max-width:820px){.app{flex-direction:column}.side{width:100%;height:auto;position:static;flex-direction:row;flex-wrap:wrap;gap:2px;padding:10px}.logo{width:100%;margin-bottom:6px}.side button.nav{width:auto;padding:8px 10px}.side .who{width:100%;margin-top:6px}.main{padding:16px 14px 50px}.grid2{grid-template-columns:1fr}}
+.shbtn{display:block;width:100%;text-align:left;margin-bottom:8px}
+.cols.s2{grid-template-columns:minmax(260px,1fr) minmax(480px,1.7fr)}td .chips{flex-wrap:nowrap}.chip{white-space:nowrap}
+@media(max-width:1180px){.cols.s2{grid-template-columns:1fr}}
+@media(max-width:820px){.app{flex-direction:column}.side{width:100%;height:auto;position:static;flex-direction:row;flex-wrap:wrap;gap:4px;padding:10px;overflow:visible}.logo{width:100%;margin-bottom:6px}.side button.nav{width:auto;padding:8px 10px;margin:2px 0}.side .who{width:100%;margin-top:6px}.main{padding:16px 14px 50px}.grid2{grid-template-columns:1fr}}
 @media print{.side,.noprint,.demo{display:none!important}.app{display:block}.main{padding:0}body{background:#fff}.sheet{border:0;padding:0;max-width:none}@page{size:A4;margin:14mm}}
 </style>
 </head>
@@ -65,8 +69,8 @@ td.n,th.n{text-align:right;white-space:nowrap}
   <button class="nav" data-v="dash">Ana Sayfa</button>
   <button class="nav" data-v="products">Ürünler</button>
   <button class="nav" data-v="sale">Yeni Satış</button>
-  <button class="nav" data-v="stockin">Mal Girişi</button>
-  <button class="nav" data-v="sales">Satış Belgeleri</button>
+  <button class="nav" data-v="stockin">Ürün Girişi</button>
+  <button class="nav" data-v="sales">Faturalar</button>
   <button class="nav" data-v="cari">Cari (Müşteriler)</button>
   <button class="nav" data-v="reports">Raporlar</button>
   <div class="who">Giriş yapan (demo)<select id="userSel"><option>Kullanıcı 1</option><option>Kullanıcı 2</option><option>Kullanıcı 3</option></select></div>
@@ -81,12 +85,16 @@ const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArQAAAFjCAYAAADM7ZjQAA
 const LOGO_LIGHT="data:image/png;base64,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";
 const KEY="ko_demo_v1";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const money=n=>(Math.round(n*100)/100).toLocaleString("tr-TR",{minimumFractionDigits:0,maximumFractionDigits:2})+" ₺";
+const r2=n=>Math.round(n*100)/100;
+const money=n=>r2(n).toLocaleString("tr-TR",{minimumFractionDigits:0,maximumFractionDigits:2})+" ₺";
 const todayStr=()=>new Date().toLocaleDateString("sv-SE");
 const offs=d=>{const x=new Date();x.setDate(x.getDate()+d);return x.toLocaleDateString("sv-SE")};
 const fd=s=>s?s.split("-").reverse().join("."):"";
 const enc=encodeURIComponent, dec=decodeURIComponent;
-let S, view="dash", cart=[], saleDraft={musteri:"",tarih:todayStr(),odeme:"odendi",tutar:""}, hitQ="", inQ="", inSel=null;
+const YONTEM=["Nakit","Çek","Havale","Kredi Kartı"], IND=[0,10,20,30];
+const DOC={satis:"SATIŞ FATURASI",iade:"İADE FATURASI"};
+const newDraft=()=>({musteri:"",tarih:todayStr(),odeme:"odendi",tutar:"",yontem:"Nakit",genelInd:0});
+let S, view="dash", cart=[], saleDraft=newDraft(), hitQ="", inQ="", inSel=null;
 
 const CATS=["Fren","Süspansiyon","Motor","Kayış ve Zincir","Filtre","Elektrik","Yağ ve Sıvılar"];
 const SEED=[
@@ -116,40 +124,77 @@ const SEED=[
 ["YG-0603","Fren Hidroliği DOT4 500 ml","Yağ ve Sıvılar","Bosch","F-02-1",19,6,170]];
 
 function seed(){
-  S={user:"Kullanıcı 1",seq:0,nextProd:1,nextMov:1,products:[],mov:[],sales:[]};
+  S={user:"Kullanıcı 1",seq:0,seqR:0,nextProd:1,nextMov:1,products:[],mov:[],sales:[],iades:[],customers:[],refunds:[]};
   SEED.forEach(r=>{const id=S.nextProd++;S.products.push({id,kod:r[0],ad:r[1],kat:r[2],marka:r[3],raf:r[4],min:r[6],fiyat:r[7]});
     addMov(id,"Açılış",r[5],"Sayım / açılış kaydı","",offs(-20),"Kullanıcı 1")});
   const pid=k=>S.products.find(p=>p.kod===k).id;
-  addMov(pid("FR-0102"),"Mal Girişi",10,"Tedarikçi: Örnek Oto Yedek Ltd.","",offs(-9),"Kullanıcı 2");
-  createSale("Ahmet Yılmaz",offs(-6),[[pid("MT-0302"),4,3250],[pid("EL-0501"),3,3400]],15000,offs(-6),"Kullanıcı 1");
-  createSale("Mehmet Kaya",offs(-3),[[pid("SP-0201"),2,50],[pid("MT-0301"),1,20]],120,offs(-3),"Kullanıcı 2");
-  createSale("Ahmet Yılmaz",offs(-2),[[pid("FR-0101"),1,1450],[pid("FR-0110"),2,720]],0,"","Kullanıcı 1");
-  createSale("Çınar Oto Servis",offs(-1),[[pid("FL-0401"),10,140],[pid("YG-0601"),4,1250]],3000,offs(-1),"Kullanıcı 3");
-  createSale("Selin Aydın",todayStr(),[[pid("SP-0203"),1,380],[pid("FL-0403"),2,210]],800,todayStr(),"Kullanıcı 2");
+  addMov(pid("FR-0102"),"Ürün Girişi",10,"Tedarikçi: Örnek Oto Yedek Ltd.","",offs(-9),"Kullanıcı 2");
+  S.customers.push({ad:"Doğan Oto Elektrik",tel:"0533 000 00 00",adres:"(örnek adres)",vergi:"",not:"Elle açılmış cari hesap örneği"});
+  createSale("Ahmet Yılmaz",offs(-6),[[pid("MT-0302"),4,3250,0],[pid("EL-0501"),3,3400,10]],15000,offs(-6),"Kullanıcı 1",{yontem:"Çek"});
+  createSale("Mehmet Kaya",offs(-3),[[pid("SP-0201"),2,50,0],[pid("MT-0301"),1,20,0]],120,offs(-3),"Kullanıcı 2",{yontem:"Nakit"});
+  createSale("Ahmet Yılmaz",offs(-2),[[pid("FR-0101"),1,1450,0],[pid("FR-0110"),2,720,20]],0,"","Kullanıcı 1",{});
+  const c=createSale("Çınar Oto Servis",offs(-1),[[pid("FL-0401"),10,140,0],[pid("YG-0601"),4,1250,0]],3000,offs(-1),"Kullanıcı 3",{genelInd:10,yontem:"Havale"});
+  createReturn(c.no,[{u:pid("FL-0401"),adet:2}],"Yanlış model","Kullanıcı 3",todayStr());
+  createSale("Selin Aydın",todayStr(),[[pid("SP-0203"),1,380,0],[pid("FL-0403"),2,210,0]],800,todayStr(),"Kullanıcı 2",{yontem:"Kredi Kartı"});
   save();
+}
+function migrate(){
+  S.customers=S.customers||[];S.iades=S.iades||[];S.refunds=S.refunds||[];S.seqR=S.seqR||0;
+  S.mov.forEach(m=>{if(m.tip==="Mal Girişi")m.tip="Ürün Girişi"});
+  S.sales.forEach(s=>{s.odemeler.forEach(o=>{if(o.yontem==="Kart")o.yontem="Kredi Kartı"});s.genelInd=s.genelInd||0;s.satirlar.forEach(l=>l.ind=l.ind||0)});
 }
 function load(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):null}catch(e){return null}}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 function addMov(u,tip,adet,kim,belge,tarih,kul){S.mov.push({id:S.nextMov++,u,tip,adet,kim,belge,tarih,kul})}
 const stok=id=>S.mov.reduce((a,m)=>m.u===id?a+m.adet:a,0);
 const prod=id=>S.products.find(p=>p.id===id);
-function createSale(musteri,tarih,lines,odenen,odemeTarih,kul){
+function norm(s){return String(s).toLocaleLowerCase("tr").replace(/ı/g,"i").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/\s+/g," ").trim()}
+
+/* ---------- hesaplar ---------- */
+const lineNet=l=>r2(l.adet*l.fiyat*(1-(l.ind||0)/100));
+const sub=s=>r2(s.satirlar.reduce((a,l)=>a+lineNet(l),0));
+const total=s=>r2(sub(s)*(1-(s.genelInd||0)/100));
+const netUnit=(s,l)=>r2(lineNet(l)/l.adet*(1-(s.genelInd||0)/100));
+const paid=s=>s.odemeler.reduce((a,o)=>a+o.tutar,0);
+const iadeTotal=i=>r2(i.satirlar.reduce((a,l)=>a+l.adet*l.birim,0));
+const iadeOf=s=>r2(S.iades.filter(i=>i.satisNo===s.no).reduce((a,i)=>a+iadeTotal(i),0));
+const returnedQty=(s,u)=>S.iades.filter(i=>i.satisNo===s.no).reduce((a,i)=>a+i.satirlar.filter(l=>l.u===u).reduce((b,l)=>b+l.adet,0),0);
+const rest=s=>s.iptal?0:Math.max(0,r2(total(s)-iadeOf(s)-paid(s)));
+function ensureCustomer(name){
+  const n=norm(name),ex=S.customers.find(c=>norm(c.ad)===n)||S.sales.map(s=>({ad:s.musteri})).find(c=>norm(c.ad)===n);
+  if(ex){if(!S.customers.some(c=>c.ad===ex.ad))S.customers.push({ad:ex.ad,tel:"",adres:"",vergi:"",not:""});return ex.ad}
+  const ad=name.trim();S.customers.push({ad,tel:"",adres:"",vergi:"",not:""});return ad;
+}
+function createSale(musteri,tarih,lines,odenen,odemeTarih,kul,opts){
+  opts=opts||{};musteri=ensureCustomer(musteri);
   S.seq++;const no=new Date().getFullYear()+"-"+String(S.seq).padStart(4,"0");
-  const satirlar=lines.map(l=>({u:l[0],adet:l[1],fiyat:l[2]}));
-  const sale={no,tarih,musteri,satirlar,odemeler:[],iptal:false,kul};
-  if(odenen>0)sale.odemeler.push({tarih:odemeTarih||tarih,tutar:odenen,yontem:"Nakit",kul});
+  const satirlar=lines.map(l=>({u:l[0],adet:l[1],fiyat:l[2],ind:l[3]||0}));
+  const sale={no,tarih,musteri,satirlar,genelInd:opts.genelInd||0,odemeler:[],iptal:false,kul};
+  if(odenen>0)sale.odemeler.push({tarih:odemeTarih||tarih,tutar:odenen,yontem:opts.yontem||"Nakit",kul});
   S.sales.push(sale);
   satirlar.forEach(l=>addMov(l.u,"Satış",-l.adet,musteri,no,tarih,kul));
   return sale;
 }
-const total=s=>s.satirlar.reduce((a,l)=>a+l.adet*l.fiyat,0);
-const paid=s=>s.odemeler.reduce((a,o)=>a+o.tutar,0);
-const rest=s=>s.iptal?0:Math.max(0,total(s)-paid(s));
-function saleBadge(s){if(s.iptal)return'<span class="b">İptal</span>';const r=rest(s);if(r<=0)return'<span class="b ok">Ödendi</span>';return paid(s)>0?'<span class="b warn">Kısmi ödeme</span>':'<span class="b bad">Ödenmedi</span>'}
-function customers(){const m={};S.sales.forEach(s=>{if(s.iptal)return;const c=m[s.musteri]||(m[s.musteri]={ad:s.musteri,satis:0,odenen:0,adet:0});c.satis+=total(s);c.odenen+=Math.min(paid(s),total(s));c.adet++});
-  return Object.values(m).map(c=>({...c,borc:c.satis-c.odenen})).sort((a,b)=>b.borc-a.borc||a.ad.localeCompare(b.ad,"tr"))}
-function lastSale(id){let best=null;S.sales.forEach(s=>{if(s.iptal)return;s.satirlar.forEach(l=>{if(l.u===id&&(!best||s.tarih>=best.tarih))best={tarih:s.tarih,musteri:s.musteri,fiyat:l.fiyat,adet:l.adet}})});return best}
-function norm(s){return s.toLocaleLowerCase("tr").normalize("NFD").replace(/[̀-ͯ]/g,"")}
+function createReturn(satisNo,items,not,kul,tarih){
+  const s=S.sales.find(x=>x.no===satisNo);S.seqR++;
+  const no="IAD-"+new Date().getFullYear()+"-"+String(S.seqR).padStart(4,"0");
+  const satirlar=items.map(it=>({u:it.u,adet:it.adet,birim:netUnit(s,s.satirlar.find(l=>l.u===it.u))}));
+  const iade={no,satisNo,tarih,musteri:s.musteri,satirlar,not:not||"",kul};
+  S.iades.push(iade);
+  satirlar.forEach(l=>addMov(l.u,"İade",l.adet,s.musteri+" (iade)",no,tarih,kul));
+  return iade;
+}
+function saleBadge(s){if(s.iptal)return'<span class="b">İptal</span>';const r=rest(s);const x=iadeOf(s)>0?' <span class="b warn">İadeli</span>':"";
+  if(r<=0)return'<span class="b ok">Ödendi</span>'+x;return(paid(s)>0?'<span class="b warn">Kısmi ödeme</span>':'<span class="b bad">Ödenmedi</span>')+x}
+function customers(){
+  const blank=ad=>({ad,tel:"",adres:"",vergi:"",not:"",satis:0,iade:0,odenen:0,adet:0,iadeOde:0}),m={};
+  S.customers.forEach(c=>m[c.ad]={...blank(c.ad),...c});
+  S.sales.forEach(s=>{if(s.iptal)return;const c=m[s.musteri]||(m[s.musteri]=blank(s.musteri));c.satis+=total(s);c.iade+=iadeOf(s);c.odenen+=paid(s);c.adet++});
+  S.refunds.forEach(f=>{if(m[f.musteri])m[f.musteri].iadeOde+=f.tutar});
+  return Object.values(m).map(c=>({...c,borc:r2(c.satis-c.iade-c.odenen+c.iadeOde)})).sort((a,b)=>b.borc-a.borc||a.ad.localeCompare(b.ad,"tr"));
+}
+const balText=c=>c.borc>0?`<span class="neg">Borcu: ${money(c.borc)}</span>`:c.borc<0?`<span class="pos">Alacağı: ${money(-c.borc)}</span>`:'<span class="b ok">Borcu yok</span>';
+function lastSale(id){let best=null;S.sales.forEach(s=>{if(s.iptal)return;s.satirlar.forEach(l=>{if(l.u===id&&(!best||s.tarih>=best.tarih))best={tarih:s.tarih,musteri:s.musteri,fiyat:netUnit(s,l),adet:l.adet}})});return best}
 
 /* ---------- görünümler ---------- */
 const V={};
@@ -157,15 +202,15 @@ V.dash=()=>{
   const today=todayStr();
   const adet=S.products.reduce((a,p)=>a+stok(p.id),0);
   const low=S.products.filter(p=>stok(p.id)<=p.min);
-  const ts=S.sales.filter(s=>!s.iptal&&s.tarih===today).reduce((a,s)=>a+total(s),0);
-  const open=customers().reduce((a,c)=>a+c.borc,0);
+  const ts=S.sales.filter(s=>!s.iptal&&s.tarih===today).reduce((a,s)=>a+total(s),0)-S.iades.filter(i=>i.tarih===today).reduce((a,i)=>a+iadeTotal(i),0);
+  const open=customers().reduce((a,c)=>a+Math.max(0,c.borc),0);
   const lastMov=[...S.mov].reverse().slice(0,7);
   return `<h1>Ana Sayfa</h1><div class="sub">Bugün: ${fd(today)}</div>
   <div class="cards">
    <div class="card"><div class="l">Ürün çeşidi</div><div class="v">${S.products.length}</div></div>
    <div class="card"><div class="l">Toplam stok adedi</div><div class="v">${adet}</div></div>
    <div class="card"><div class="l">Kritik stok</div><div class="v ${low.length?"neg":""}">${low.length}</div></div>
-   <div class="card"><div class="l">Bugünkü satış</div><div class="v">${money(ts)}</div></div>
+   <div class="card"><div class="l">Bugünkü satış (iade düşülmüş)</div><div class="v">${money(ts)}</div></div>
    <div class="card"><div class="l">Açık cari (alacak)</div><div class="v">${money(open)}</div></div>
   </div>
   <div class="cols">
@@ -188,80 +233,102 @@ V.products=()=>{
   </table></div><div class="muted" style="margin-top:8px">${list.length} ürün gösteriliyor</div></div>`;
 };
 
+const chips=(cur,fn)=>`<span class="chips">${IND.map(v=>`<button type="button" class="chip ${cur===v?"on":""}" onclick="${fn(v)}">${v?"%"+v:"Yok"}</button>`).join("")}</span>`;
 V.sale=()=>{
   const q=norm(hitQ);
   const hits=q?S.products.filter(p=>norm(p.ad+" "+p.kod+" "+p.marka).includes(q)).slice(0,8):[];
-  const gt=cart.reduce((a,l)=>a+l.adet*l.fiyat,0);
-  const names=[...new Set(S.sales.map(s=>s.musteri))];
-  return `<h1>Yeni Satış</h1><div class="sub">Kayıt edilince ürünler stoktan otomatik düşer ve cariye işlenir.</div>
-  <div class="cols"><div>
+  const ara=r2(cart.reduce((a,l)=>a+lineNet(l),0)),gt=r2(ara*(1-saleDraft.genelInd/100));
+  const names=customers().map(c=>c.ad);
+  return `<h1>Yeni Satış Faturası</h1><div class="sub">Kayıt edilince ürünler stoktan otomatik düşer ve cariye işlenir.</div>
+  <div class="cols s2"><div>
    <div class="panel"><h2>1. Müşteri ve tarih</h2><div class="grid2">
-    <label>Kime satıldı (yazın ya da listeden seçin)<input id="sm" list="mlist" value="${esc(saleDraft.musteri)}" oninput="saleDraft.musteri=this.value" placeholder="Ad Soyad / Firma"></label>
-    <label>Satış tarihi<input type="date" id="st" value="${saleDraft.tarih}" onchange="saleDraft.tarih=this.value"></label></div>
+    <label>Kime satıldı (yazın ya da listeden seçin; yeni isim cari hesabı otomatik açar)<input id="sm" list="mlist" value="${esc(saleDraft.musteri)}" oninput="saleDraft.musteri=this.value" placeholder="Ad Soyad / Firma"></label>
+    <label>Fatura tarihi<input type="date" id="st" value="${saleDraft.tarih}" onchange="saleDraft.tarih=this.value"></label></div>
     <datalist id="mlist">${names.map(n=>`<option value="${esc(n)}">`).join("")}</datalist></div>
    <div class="panel"><h2>2. Ürün ekle</h2>
     <input style="width:100%;margin-bottom:10px" id="hq" placeholder="Ürün adı, kodu ya da markası yazın..." value="${esc(hitQ)}" oninput="hitQ=this.value;keepFocus('sale','hq')">
     ${hits.length?`<div class="hits">${hits.map(p=>`<div class="hit" onclick="addCart(${p.id})"><span>${esc(p.ad)}<div class="muted">${esc(p.kod)} · Raf ${esc(p.raf)}</div></span><span class="right">${money(p.fiyat)}<div class="muted">Stok ${stok(p.id)}</div></span></div>`).join("")}</div>`:q?'<div class="muted">Eşleşen ürün yok</div>':""}</div></div>
-  <div><div class="panel"><h2>3. Satış kalemleri</h2>
-   ${cart.length?`<div class="tw"><table><tr><th>Ürün</th><th class="n">Adet</th><th class="n">Birim fiyat</th><th class="n">Tutar</th><th></th></tr>${cart.map((l,i)=>`<tr><td>${esc(prod(l.u).ad)}<div class="muted">Stok ${stok(l.u)}</div></td><td class="n"><input type="number" min="1" style="width:64px" value="${l.adet}" onchange="setCart(${i},'adet',this.value)"></td><td class="n"><input type="number" min="0" step="0.01" style="width:90px" value="${l.fiyat}" onchange="setCart(${i},'fiyat',this.value)"></td><td class="n">${money(l.adet*l.fiyat)}</td><td><button class="btn d sm" onclick="cart.splice(${i},1);render()">×</button></td></tr>`).join("")}</table></div>`:'<div class="empty">Henüz ürün eklenmedi</div>'}
+  <div><div class="panel"><h2>3. Fatura kalemleri</h2>
+   ${cart.length?`<div class="tw"><table><tr><th>Ürün</th><th class="n">Adet</th><th class="n">Birim fiyat</th><th>İndirim</th><th class="n">Tutar</th><th></th></tr>${cart.map((l,i)=>`<tr><td>${esc(prod(l.u).ad)}<div class="muted">Stok ${stok(l.u)}</div></td><td class="n"><input type="number" min="1" style="width:60px" value="${l.adet}" onchange="setCart(${i},'adet',this.value)"></td><td class="n"><input type="number" min="0" step="0.01" style="width:84px" value="${l.fiyat}" onchange="setCart(${i},'fiyat',this.value)"></td><td>${chips(l.ind,v=>`setCart(${i},'ind',${v})`)}</td><td class="n">${money(lineNet(l))}</td><td><button class="btn d sm" onclick="cart.splice(${i},1);render()">×</button></td></tr>`).join("")}</table></div>`:'<div class="empty">Henüz ürün eklenmedi</div>'}
+   <div class="tot" style="margin-top:8px"><span>Ara toplam</span><span>${money(ara)}</span></div>
+   <div class="tot"><span>Genel indirim ${chips(saleDraft.genelInd,v=>`saleDraft.genelInd=${v};render()`)}</span><span>${saleDraft.genelInd?"-"+money(ara-gt):"-"}</span></div>
    <div class="tot g"><span>Genel toplam</span><span>${money(gt)}</span></div>
    <h2 style="margin-top:16px">4. Ödeme</h2><div class="grid2">
     <label>Ödeme durumu<select onchange="saleDraft.odeme=this.value;render()"><option value="odendi" ${saleDraft.odeme==="odendi"?"selected":""}>Ödeme alındı (tamamı)</option><option value="kismi" ${saleDraft.odeme==="kismi"?"selected":""}>Kısmi ödeme alındı</option><option value="yok" ${saleDraft.odeme==="yok"?"selected":""}>Ödeme alınmadı (cariye yaz)</option></select></label>
+    ${saleDraft.odeme!=="yok"?`<label>Ödeme yöntemi<select onchange="saleDraft.yontem=this.value">${YONTEM.map(y=>`<option ${saleDraft.yontem===y?"selected":""}>${y}</option>`).join("")}</select></label>`:""}
     ${saleDraft.odeme==="kismi"?`<label>Alınan tutar (₺)<input type="number" min="0" step="0.01" value="${esc(saleDraft.tutar)}" oninput="saleDraft.tutar=this.value"></label>`:""}</div>
-   <div class="actions" style="margin-top:14px;text-align:right"><button class="btn" onclick="saveSale()">Satışı kaydet</button></div></div></div></div>`;
+   <div style="margin-top:14px;text-align:right"><button class="btn" onclick="saveSale()">Faturayı kaydet</button></div></div></div></div>`;
 };
 
 V.stockin=()=>{
   const q=norm(inQ),hits=q?S.products.filter(p=>norm(p.ad+" "+p.kod).includes(q)).slice(0,6):[];
-  const ins=[...S.mov].filter(m=>m.tip==="Mal Girişi").reverse().slice(0,8);
-  return `<h1>Mal Girişi</h1><div class="sub">Yeni gelen mallar burada stoka eklenir; ürün geçmişinde görünür.</div>
+  const ins=[...S.mov].filter(m=>m.tip==="Ürün Girişi").reverse().slice(0,8);
+  return `<h1>Ürün Girişi</h1><div class="sub">Yeni gelen ürünler burada stoğa eklenir; ürün geçmişinde görünür.</div>
   <div class="cols"><div class="panel"><h2>Yeni giriş</h2>
    <input style="width:100%;margin-bottom:10px" id="iq" placeholder="Ürün ara..." value="${esc(inQ)}" oninput="inQ=this.value;inSel=null;keepFocus('stockin','iq')">
    ${hits.length&&!inSel?`<div class="hits">${hits.map(p=>`<div class="hit" onclick="inSel=${p.id};inQ='';render()"><span>${esc(p.ad)}<div class="muted">${esc(p.kod)}</div></span><span class="muted">Stok ${stok(p.id)}</span></div>`).join("")}</div>`:""}
    ${inSel?`<div class="last" style="background:var(--okbg);color:var(--ok)">Seçili: <b>${esc(prod(inSel).ad)}</b> · mevcut stok ${stok(inSel)}</div><div class="grid2"><label>Gelen adet<input type="number" min="1" id="ia" value="1"></label><label>Tedarikçi / not<input id="ik" placeholder="Örn. Örnek Oto Yedek Ltd."></label></div><div style="margin-top:12px"><button class="btn" onclick="saveIn()">Stoğa ekle</button></div>`:'<div class="muted">Önce ürünü arayıp seçin.</div>'}</div>
-  <div class="panel"><h2>Son mal girişleri</h2><div class="tw"><table><tr><th>Tarih</th><th>Ürün</th><th class="n">Adet</th></tr>${ins.map(m=>`<tr><td>${fd(m.tarih)}</td><td>${esc(prod(m.u).ad)}<div class="muted">${esc(m.kim)} · ${esc(m.kul)}</div></td><td class="n pos">+${m.adet}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">Kayıt yok</td></tr>'}</table></div></div></div>`;
+  <div class="panel"><h2>Son ürün girişleri</h2><div class="tw"><table><tr><th>Tarih</th><th>Ürün</th><th class="n">Adet</th></tr>${ins.map(m=>`<tr><td>${fd(m.tarih)}</td><td>${esc(prod(m.u).ad)}<div class="muted">${esc(m.kim)} · ${esc(m.kul)}</div></td><td class="n pos">+${m.adet}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">Kayıt yok</td></tr>'}</table></div></div></div>`;
 };
 
 V.sales=()=>{
-  const list=[...S.sales].reverse();
-  return `<h1>Satış Belgeleri</h1><div class="sub">Kesilmiş belgelerin arşivi. Belge numarası sıralıdır; iptal edilen belge silinmez, iptal olarak kalır.</div>
-  <div class="panel tw"><table><tr><th>Belge no</th><th>Tarih</th><th>Müşteri</th><th class="n">Toplam</th><th class="n">Kalan</th><th>Durum</th><th></th></tr>
-  ${list.map(s=>`<tr><td>${s.no}</td><td>${fd(s.tarih)}</td><td>${esc(s.musteri)}</td><td class="n">${money(total(s))}</td><td class="n">${money(rest(s))}</td><td>${saleBadge(s)}</td><td class="n"><button class="btn s sm" onclick="doc('${s.no}')">Belge</button> ${s.iptal?"":`<button class="btn d sm" onclick="cancelSale('${s.no}')">İptal</button>`}</td></tr>`).join("")}</table></div>`;
+  const rows=[...S.sales.map(s=>({t:"s",no:s.no,tarih:s.tarih,ad:s.musteri,o:s})),...S.iades.map(i=>({t:"i",no:i.no,tarih:i.tarih,ad:i.musteri,o:i}))].sort((a,b)=>b.tarih.localeCompare(a.tarih)||b.no.localeCompare(a.no));
+  return `<h1>Faturalar</h1><div class="sub">Satış ve iade faturalarının arşivi. Fatura numarası sıralıdır; iptal edilen fatura silinmez, iptal olarak kalır.</div>
+  <div class="panel tw"><table><tr><th>No</th><th>Tür</th><th>Tarih</th><th>Müşteri</th><th class="n">Tutar</th><th class="n">Kalan</th><th>Durum</th><th></th></tr>
+  ${rows.map(r=>r.t==="s"?`<tr><td>${r.no}</td><td>Satış</td><td>${fd(r.tarih)}</td><td>${esc(r.ad)}</td><td class="n">${money(total(r.o))}</td><td class="n">${money(rest(r.o))}</td><td>${saleBadge(r.o)}</td><td class="n"><button class="btn s sm" onclick="doc('${r.no}')">Fatura</button> ${r.o.iptal?"":`<button class="btn s sm" onclick="returnModal('${r.no}')">İade</button> <button class="btn d sm" onclick="cancelSale('${r.no}')">İptal</button>`}</td></tr>`
+   :`<tr><td>${r.no}</td><td>İade</td><td>${fd(r.tarih)}</td><td>${esc(r.ad)}<div class="muted">Bağlı fatura: ${r.o.satisNo}</div></td><td class="n neg">-${money(iadeTotal(r.o))}</td><td class="n">-</td><td><span class="b warn">İade</span></td><td class="n"><button class="btn s sm" onclick="doc('${r.no}')">Fatura</button></td></tr>`).join("")}</table></div>`;
 };
 
 V.cari=()=>{
   const q=norm(window._cq||"");
   const list=customers().filter(c=>!q||norm(c.ad).includes(q));
-  const tb=list.reduce((a,c)=>a+c.borc,0);
-  return `<h1>Cari (Müşteriler)</h1><div class="sub">Müşteriler satış yapıldıkça kendiliğinden oluşur. Borç = toplam satış − alınan ödemeler.</div>
-  <div class="cards"><div class="card"><div class="l">Müşteri sayısı</div><div class="v">${list.length}</div></div><div class="card"><div class="l">Toplam açık alacak</div><div class="v">${money(tb)}</div></div></div>
-  <div class="panel"><div class="row"><input class="grow" id="cq" placeholder="Müşteri ara..." value="${esc(window._cq||"")}" oninput="window._cq=this.value;keepFocus('cari','cq')"></div>
-  <div class="tw"><table><tr><th>Müşteri</th><th class="n">Satış</th><th class="n">Ödenen</th><th class="n">Borcu</th></tr>
-  ${list.map(c=>`<tr class="click" onclick="cariDetail('${enc(c.ad)}')"><td>${esc(c.ad)}<div class="muted">${c.adet} belge</div></td><td class="n">${money(c.satis)}</td><td class="n">${money(c.odenen)}</td><td class="n ${c.borc>0?"neg":""}">${c.borc>0?money(c.borc):'<span class="b ok">Borcu yok</span>'}</td></tr>`).join("")||'<tr><td colspan="4" class="empty">Müşteri yok</td></tr>'}</table></div></div>`;
+  const tb=list.reduce((a,c)=>a+Math.max(0,c.borc),0);
+  return `<h1>Cari (Müşteriler)</h1><div class="sub">Cari hesabı buradan elle açabilir ya da fatura keserken yeni isim yazarak otomatik açabilirsiniz. Bakiye = satışlar − iadeler − ödemeler.</div>
+  <div class="cards"><div class="card"><div class="l">Cari hesap sayısı</div><div class="v">${list.length}</div></div><div class="card"><div class="l">Toplam açık alacak</div><div class="v">${money(tb)}</div></div></div>
+  <div class="panel"><div class="row"><input class="grow" id="cq" placeholder="Müşteri ara..." value="${esc(window._cq||"")}" oninput="window._cq=this.value;keepFocus('cari','cq')"><button class="btn" onclick="customerForm()">+ Yeni cari hesap</button></div>
+  <div class="tw"><table><tr><th>Müşteri</th><th>Telefon</th><th class="n">Net satış</th><th class="n">Ödenen</th><th class="n">Bakiye</th></tr>
+  ${list.map(c=>`<tr class="click" onclick="cariDetail('${enc(c.ad)}')"><td>${esc(c.ad)}<div class="muted">${c.adet} fatura</div></td><td>${esc(c.tel||"-")}</td><td class="n">${money(c.satis-c.iade)}</td><td class="n">${money(c.odenen-c.iadeOde)}</td><td class="n">${balText(c)}</td></tr>`).join("")||'<tr><td colspan="5" class="empty">Müşteri yok</td></tr>'}</table></div></div>`;
 };
 
 V.reports=()=>{
   const d=window._rd||todayStr();
-  const sd=S.sales.filter(s=>s.tarih===d&&!s.iptal);
+  const sd=S.sales.filter(s=>s.tarih===d&&!s.iptal),id=S.iades.filter(i=>i.tarih===d);
   const pays=[];S.sales.forEach(s=>{if(s.iptal)return;s.odemeler.forEach(o=>{if(o.tarih===d)pays.push({...o,no:s.no,musteri:s.musteri})})});
-  const ts=sd.reduce((a,s)=>a+total(s),0),tp=pays.reduce((a,o)=>a+o.tutar,0);
-  return `<h1>Gün Sonu Raporu</h1><div class="sub">Seçilen gün için satış, tahsilat ve yeni açık borç.</div>
+  const rf=S.refunds.filter(f=>f.tarih===d);
+  const ts=sd.reduce((a,s)=>a+total(s),0),ti=id.reduce((a,i)=>a+iadeTotal(i),0),tp=pays.reduce((a,o)=>a+o.tutar,0)-rf.reduce((a,f)=>a+f.tutar,0);
+  const byY=YONTEM.map(y=>[y,pays.filter(o=>o.yontem===y).reduce((a,o)=>a+o.tutar,0)-rf.filter(f=>f.yontem===y).reduce((a,f)=>a+f.tutar,0)]);
+  return `<h1>Gün Sonu Raporu</h1><div class="sub">Seçilen gün için satış, iade ve tahsilat.</div>
   <div class="panel noprint"><div class="row"><label>Gün <input type="date" value="${d}" onchange="window._rd=this.value;render()"></label>
   <button class="btn" onclick="csvDay('${d}')">Excel için indir (CSV)</button><button class="btn s" onclick="csvStock()">Tüm stok listesini indir</button><button class="btn s" onclick="window.print()">Yazdır</button></div></div>
-  <div class="cards"><div class="card"><div class="l">Satış adedi (belge)</div><div class="v">${sd.length}</div></div><div class="card"><div class="l">Toplam satış</div><div class="v">${money(ts)}</div></div><div class="card"><div class="l">Tahsil edilen</div><div class="v">${money(tp)}</div></div><div class="card"><div class="l">Gün içi yeni açık</div><div class="v">${money(Math.max(0,ts-sd.reduce((a,s)=>a+Math.min(paid(s),total(s)),0)))}</div></div></div>
-  <div class="cols"><div class="panel"><h2>Satışlar — ${fd(d)}</h2><div class="tw"><table><tr><th>Belge</th><th>Müşteri</th><th class="n">Tutar</th></tr>${sd.map(s=>`<tr><td>${s.no}</td><td>${esc(s.musteri)}</td><td class="n">${money(total(s))}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">Bu gün satış yok</td></tr>'}</table></div></div>
-  <div class="panel"><h2>Tahsilatlar — ${fd(d)}</h2><div class="tw"><table><tr><th>Müşteri</th><th>Belge</th><th class="n">Tutar</th></tr>${pays.map(o=>`<tr><td>${esc(o.musteri)}</td><td>${o.no}</td><td class="n">${money(o.tutar)}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">Bu gün tahsilat yok</td></tr>'}</table></div></div></div>`;
+  <div class="cards"><div class="card"><div class="l">Satış faturası</div><div class="v">${sd.length}</div></div><div class="card"><div class="l">Toplam satış</div><div class="v">${money(ts)}</div></div><div class="card"><div class="l">İade</div><div class="v">${money(ti)}</div></div><div class="card"><div class="l">Net satış</div><div class="v">${money(ts-ti)}</div></div><div class="card"><div class="l">Tahsil edilen</div><div class="v">${money(tp)}</div></div></div>
+  <div class="cols"><div class="panel"><h2>Satış faturaları — ${fd(d)}</h2><div class="tw"><table><tr><th>No</th><th>Müşteri</th><th class="n">Tutar</th></tr>${sd.map(s=>`<tr><td>${s.no}</td><td>${esc(s.musteri)}</td><td class="n">${money(total(s))}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">Bu gün satış yok</td></tr>'}</table></div>
+  ${id.length?`<h2 style="margin-top:14px">İade faturaları</h2><div class="tw"><table>${id.map(i=>`<tr><td>${i.no}</td><td>${esc(i.musteri)}</td><td class="n neg">-${money(iadeTotal(i))}</td></tr>`).join("")}</table></div>`:""}</div>
+  <div class="panel"><h2>Tahsilat yöntemine göre — ${fd(d)}</h2><div class="tw"><table><tr><th>Yöntem</th><th class="n">Tutar</th></tr>${byY.map(y=>`<tr><td>${y[0]}</td><td class="n">${money(y[1])}</td></tr>`).join("")}<tr><td><b>Toplam</b></td><td class="n"><b>${money(tp)}</b></td></tr></table></div>
+  <h2 style="margin-top:14px">Tahsilatlar</h2><div class="tw"><table><tr><th>Müşteri</th><th>Yöntem</th><th class="n">Tutar</th></tr>${pays.map(o=>`<tr><td>${esc(o.musteri)}<div class="muted">${o.no}</div></td><td>${esc(o.yontem)}</td><td class="n">${money(o.tutar)}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">Bu gün tahsilat yok</td></tr>'}</table></div></div></div>`;
 };
 
+function headHtml(title,no,tarih){return `<div class="head"><div><img src="${LOGO}" alt="Kayıranlar Otomotiv"><div>(örnek adres satırı)<br>Tel: (örnek) · Vergi No: (örnek)</div></div><div style="text-align:right"><h3>${title}</h3><div>Fatura No: <b>${no}</b><br>Tarih: ${fd(tarih)}</div></div></div>`}
 V.doc=()=>{
-  const s=S.sales.find(x=>x.no===window._doc);if(!s)return"";
-  return `<div class="row noprint"><button class="btn s" onclick="go('sales')">← Geri</button><button class="btn" onclick="window.print()">A4 yazdır / PDF</button></div>
-  <div class="sheet">${s.iptal?'<div class="iptal">İPTAL</div>':""}
-   <div class="head"><div><img src="${LOGO}" alt="Kayıranlar Otomotiv"><div>(örnek adres satırı)<br>Tel: (örnek) · Vergi No: (örnek)</div></div><div style="text-align:right"><h3>SATIŞ BELGESİ</h3><div>Belge No: <b>${s.no}</b><br>Tarih: ${fd(s.tarih)}</div></div></div>
-   <div style="margin-bottom:14px"><span class="muted" style="color:#555">Sayın</span> <b>${esc(s.musteri)}</b></div>
+  const no=window._doc,s=S.sales.find(x=>x.no===no),i=!s&&S.iades.find(x=>x.no===no);
+  if(!s&&!i)return"";
+  const bar=`<div class="row noprint"><button class="btn s" onclick="go('sales')">← Geri</button><button class="btn" onclick="window.print()">A4 yazdır / PDF</button><button class="btn s" onclick="shareModal('${no}')">Paylaş</button>${s&&!s.iptal?`<button class="btn s" onclick="returnModal('${no}')">İade faturası oluştur</button>`:""}</div>`;
+  if(i){return bar+`<div class="sheet">${headHtml(DOC.iade,i.no,i.tarih)}
+   <div style="margin-bottom:14px">Sayın <b>${esc(i.musteri)}</b> · Bağlı satış faturası: <b>${i.satisNo}</b>${i.not?` · Not: ${esc(i.not)}`:""}</div>
    <table><tr><th>Kod</th><th>Ürün</th><th class="n">Adet</th><th class="n">Birim fiyat</th><th class="n">Tutar</th></tr>
-   ${s.satirlar.map(l=>`<tr><td>${esc(prod(l.u).kod)}</td><td>${esc(prod(l.u).ad)}</td><td class="n">${l.adet}</td><td class="n">${money(l.fiyat)}</td><td class="n">${money(l.adet*l.fiyat)}</td></tr>`).join("")}</table>
-   <div style="max-width:300px;margin-left:auto;margin-top:12px"><div class="tot g"><span>GENEL TOPLAM</span><span>${money(total(s))}</span></div><div class="tot"><span>Alınan ödeme</span><span>${money(paid(s))}</span></div><div class="tot"><b>Kalan</b><b>${money(rest(s))}</b></div></div>
+   ${i.satirlar.map(l=>`<tr><td>${esc(prod(l.u).kod)}</td><td>${esc(prod(l.u).ad)}</td><td class="n">${l.adet}</td><td class="n">${money(l.birim)}</td><td class="n">${money(l.adet*l.birim)}</td></tr>`).join("")}</table>
+   <div style="max-width:300px;margin-left:auto;margin-top:12px"><div class="tot g"><span>İADE TOPLAMI</span><span>${money(iadeTotal(i))}</span></div></div>
+   <div class="stamp"><div>Teslim eden<br><br>Kaşe / İmza</div><div style="text-align:right">Teslim alan<br><br>İmza</div></div>
+   <div style="margin-top:30px;font-size:11px;color:#777">Demo şablon: firma bilgileri ve başlık müşteri ile birlikte netleştirilecek.</div></div>`}
+  const yont=[...new Set(s.odemeler.map(o=>o.yontem))].join(", ");
+  return bar+`<div class="sheet">${s.iptal?'<div class="iptal">İPTAL</div>':""}${headHtml(DOC.satis,s.no,s.tarih)}
+   <div style="margin-bottom:14px">Sayın <b>${esc(s.musteri)}</b></div>
+   <table><tr><th>Kod</th><th>Ürün</th><th class="n">Adet</th><th class="n">Birim fiyat</th><th class="n">İndirim</th><th class="n">Tutar</th></tr>
+   ${s.satirlar.map(l=>`<tr><td>${esc(prod(l.u).kod)}</td><td>${esc(prod(l.u).ad)}</td><td class="n">${l.adet}</td><td class="n">${money(l.fiyat)}</td><td class="n">${l.ind?"%"+l.ind:"-"}</td><td class="n">${money(lineNet(l))}</td></tr>`).join("")}</table>
+   <div style="max-width:320px;margin-left:auto;margin-top:12px"><div class="tot"><span>Ara toplam</span><span>${money(sub(s))}</span></div>
+   ${s.genelInd?`<div class="tot"><span>Genel indirim (%${s.genelInd})</span><span>-${money(sub(s)-total(s))}</span></div>`:""}
+   <div class="tot g"><span>GENEL TOPLAM</span><span>${money(total(s))}</span></div>
+   ${iadeOf(s)?`<div class="tot"><span>İade</span><span>-${money(iadeOf(s))}</span></div>`:""}
+   <div class="tot"><span>Alınan ödeme${yont?` (${esc(yont)})`:""}</span><span>${money(paid(s))}</span></div><div class="tot"><b>Kalan</b><b>${money(rest(s))}</b></div></div>
    <div class="stamp"><div>Teslim eden<br><br>Kaşe / İmza</div><div style="text-align:right">Teslim alan<br><br>İmza</div></div>
    <div style="margin-top:30px;font-size:11px;color:#777">Demo şablon: firma bilgileri, KDV ve başlık müşteri ile birlikte netleştirilecek.</div></div>`;
 };
@@ -277,35 +344,81 @@ function go(v){view=v;window.scrollTo(0,0);render()}
 function keepFocus(v,id){render();const e=document.getElementById(id);if(e){e.focus();const l=e.value.length;e.setSelectionRange(l,l)}}
 document.querySelectorAll(".side .nav").forEach(b=>b.onclick=()=>go(b.dataset.v));
 document.getElementById("userSel").onchange=e=>{S.user=e.target.value;save()};
-function resetDemo(){if(!confirm("Örnek veriler yeniden yüklenecek, yaptığınız değişiklikler silinecek. Devam edilsin mi?"))return;try{localStorage.removeItem(KEY)}catch(e){}cart=[];seed();view="dash";render()}
+function resetDemo(){if(!confirm("Örnek veriler yeniden yüklenecek, yaptığınız değişiklikler silinecek. Devam edilsin mi?"))return;try{localStorage.removeItem(KEY)}catch(e){}cart=[];saleDraft=newDraft();seed();view="dash";render()}
 function modal(html){document.getElementById("modalRoot").innerHTML=`<div class="modalbg" onclick="if(event.target===this)closeModal()"><div class="modal">${html}</div></div>`}
 function closeModal(){document.getElementById("modalRoot").innerHTML=""}
 
-function addCart(id){const ex=cart.find(l=>l.u===id);if(ex)ex.adet++;else cart.push({u:id,adet:1,fiyat:prod(id).fiyat});hitQ="";render()}
+function addCart(id){const ex=cart.find(l=>l.u===id);if(ex)ex.adet++;else cart.push({u:id,adet:1,fiyat:prod(id).fiyat,ind:0});hitQ="";render()}
 function setCart(i,k,v){v=Number(v);if(!(v>=0))return;if(k==="adet"&&v<1)v=1;cart[i][k]=v;render()}
 function saveSale(){
   const m=saleDraft.musteri.trim();
   if(!m)return alert("Lütfen müşteri adını yazın.");
-  if(!cart.length)return alert("Satışa en az bir ürün ekleyin.");
-  if(!saleDraft.tarih)return alert("Satış tarihini seçin.");
+  if(!cart.length)return alert("Faturaya en az bir ürün ekleyin.");
+  if(!saleDraft.tarih)return alert("Fatura tarihini seçin.");
   for(const l of cart){if(l.adet>stok(l.u))return alert(`"${prod(l.u).ad}" için stok yetersiz (stok: ${stok(l.u)}).`)}
-  const gt=cart.reduce((a,l)=>a+l.adet*l.fiyat,0);
+  const gt=r2(cart.reduce((a,l)=>a+lineNet(l),0)*(1-saleDraft.genelInd/100));
   let odenen=0;if(saleDraft.odeme==="odendi")odenen=gt;if(saleDraft.odeme==="kismi"){odenen=Number(saleDraft.tutar);if(!(odenen>0&&odenen<=gt))return alert("Alınan tutar 0'dan büyük ve genel toplamı geçmeyen bir değer olmalı.")}
-  const s=createSale(m,saleDraft.tarih,cart.map(l=>[l.u,l.adet,l.fiyat]),odenen,saleDraft.tarih,S.user);
-  save();cart=[];saleDraft={musteri:"",tarih:todayStr(),odeme:"odendi",tutar:""};window._doc=s.no;view="doc";render();
+  const s=createSale(m,saleDraft.tarih,cart.map(l=>[l.u,l.adet,l.fiyat,l.ind]),odenen,saleDraft.tarih,S.user,{genelInd:saleDraft.genelInd,yontem:saleDraft.yontem});
+  save();cart=[];saleDraft=newDraft();window._doc=s.no;view="doc";render();
 }
-function cancelSale(no){const s=S.sales.find(x=>x.no===no);if(!s||s.iptal)return;if(!confirm(`${no} numaralı belge iptal edilsin mi? Ürünler stoğa geri eklenir, belge silinmez.`))return;
-  s.iptal=true;s.satirlar.forEach(l=>addMov(l.u,"İptal",l.adet,s.musteri+" (belge iptali)",no,todayStr(),S.user));save();render()}
-function doc(no){window._doc=no;view="doc";render()}
+function cancelSale(no){const s=S.sales.find(x=>x.no===no);if(!s||s.iptal)return;
+  if(iadeOf(s)>0)return alert("Bu faturaya bağlı iade var; iptal edilemez.");
+  if(!confirm(`${no} numaralı fatura iptal edilsin mi? Ürünler stoğa geri eklenir, fatura silinmez.`))return;
+  s.iptal=true;s.satirlar.forEach(l=>addMov(l.u,"İptal",l.adet,s.musteri+" (fatura iptali)",no,todayStr(),S.user));save();render()}
+function doc(no){window._doc=no;view="doc";closeModal();render()}
 function saveIn(){const a=Number(document.getElementById("ia").value);if(!(a>=1))return alert("Adet 1 veya daha büyük olmalı.");
-  addMov(inSel,"Mal Girişi",a,document.getElementById("ik").value.trim()||"Mal girişi","",todayStr(),S.user);save();inSel=null;inQ="";render()}
+  addMov(inSel,"Ürün Girişi",a,document.getElementById("ik").value.trim()||"Ürün girişi","",todayStr(),S.user);save();inSel=null;inQ="";render()}
+
+function returnModal(no){
+  const s=S.sales.find(x=>x.no===no);if(!s||s.iptal)return;
+  const rows=s.satirlar.map((l,i)=>({l,i,max:l.adet-returnedQty(s,l.u)}));
+  if(!rows.some(r=>r.max>0))return alert("Bu faturadaki tüm ürünler zaten iade edilmiş.");
+  modal(`<div class="row" style="justify-content:space-between"><h2 style="margin:0">İade faturası oluştur</h2><button class="btn s sm" onclick="closeModal()">Kapat</button></div>
+  <div class="muted">Bağlı fatura: ${s.no} · ${esc(s.musteri)}. İade edilen ürünler stoğa geri eklenir, tutar müşterinin cari hesabından düşer. İade, satıştaki indirimli fiyat üzerinden hesaplanır.</div>
+  <div class="tw" style="margin-top:12px"><table><tr><th>Ürün</th><th class="n">Satılan</th><th class="n">Daha önce iade</th><th class="n">İade adedi</th></tr>
+  ${rows.map(r=>`<tr><td>${esc(prod(r.l.u).ad)}</td><td class="n">${r.l.adet}</td><td class="n">${r.l.adet-r.max}</td><td class="n">${r.max>0?`<input type="number" min="0" max="${r.max}" value="0" id="r_${r.i}" style="width:70px">`:'<span class="muted">-</span>'}</td></tr>`).join("")}</table></div>
+  <label class="muted" style="display:block;margin-top:12px">İade nedeni (isteğe bağlı)<input id="r_not" style="width:100%;margin-top:4px"></label>
+  <div style="margin-top:14px;text-align:right"><button class="btn" onclick="doReturn('${s.no}')">İade faturasını kaydet</button></div>`);
+}
+function doReturn(no){
+  const s=S.sales.find(x=>x.no===no),items=[];
+  s.satirlar.forEach((l,i)=>{const e=document.getElementById("r_"+i);if(!e)return;const a=Number(e.value),max=l.adet-returnedQty(s,l.u);
+    if(a>max){items.error=`"${prod(l.u).ad}" için en fazla ${max} adet iade edilebilir.`}else if(a>0)items.push({u:l.u,adet:a})});
+  if(items.error)return alert(items.error);
+  if(!items.length)return alert("İade edilecek en az bir ürün için adet girin.");
+  const i=createReturn(no,items,document.getElementById("r_not").value.trim(),S.user,todayStr());
+  save();doc(i.no);
+}
+
+function shareText(no){
+  const s=S.sales.find(x=>x.no===no),i=!s&&S.iades.find(x=>x.no===no);let t="Kayıranlar Otomotiv Yedek Parça LTD.\n";
+  if(i){t+=`${DOC.iade} ${i.no} (bağlı: ${i.satisNo})\nTarih: ${fd(i.tarih)}\nMüşteri: ${i.musteri}\n\n`+i.satirlar.map(l=>`- ${prod(l.u).ad}: ${l.adet} adet x ${money(l.birim)}`).join("\n")+`\n\nİade toplamı: ${money(iadeTotal(i))}`}
+  else{t+=`${DOC.satis} ${s.no}\nTarih: ${fd(s.tarih)}\nMüşteri: ${s.musteri}\n\n`+s.satirlar.map(l=>`- ${prod(l.u).ad}: ${l.adet} adet x ${money(l.fiyat)}${l.ind?` (%${l.ind} indirim)`:""} = ${money(lineNet(l))}`).join("\n")+`\n\nAra toplam: ${money(sub(s))}${s.genelInd?`\nGenel indirim (%${s.genelInd}): -${money(sub(s)-total(s))}`:""}\nGenel toplam: ${money(total(s))}\nAlınan ödeme: ${money(paid(s))}\nKalan: ${money(rest(s))}`}
+  return t;
+}
+function shareModal(no){
+  const t=shareText(no),canNative=!!navigator.share;
+  modal(`<div class="row" style="justify-content:space-between"><h2 style="margin:0">Faturayı paylaş</h2><button class="btn s sm" onclick="closeModal()">Kapat</button></div>
+  <pre style="white-space:pre-wrap;background:var(--bg);border-radius:8px;padding:12px;font:inherit">${esc(t)}</pre>
+  ${canNative?`<button class="btn shbtn" onclick="nativeShare('${no}')">Telefonda paylaş…</button>`:""}
+  <a class="btn s shbtn" style="text-decoration:none;display:block" target="_blank" rel="noopener" href="https://wa.me/?text=${enc(t)}">WhatsApp ile gönder</a>
+  <a class="btn s shbtn" style="text-decoration:none;display:block" href="mailto:?subject=${enc("Fatura "+no)}&body=${enc(t)}">E-posta ile gönder</a>
+  <button class="btn s shbtn" onclick="copyText('${no}')">Metni kopyala</button>
+  <div class="muted">Demoda fatura özeti metin olarak paylaşılır. Gerçek sistemde fatura PDF dosyası olarak gönderilir.</div>`);
+}
+function nativeShare(no){navigator.share({title:"Fatura "+no,text:shareText(no)}).catch(()=>{})}
+function copyText(no){const t=shareText(no);
+  const done=()=>alert("Fatura özeti kopyalandı.");
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(done,()=>fallbackCopy(t,done));else fallbackCopy(t,done)}
+function fallbackCopy(t,done){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");done()}catch(e){prompt("Kopyalamak için Ctrl+C",t)}a.remove()}
+
 function detail(id){
   const p=prod(id),s=stok(id),ls=lastSale(id),h=S.mov.filter(m=>m.u===id).reverse();
   modal(`<div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(p.ad)}</h2><button class="btn s sm" onclick="closeModal()">Kapat</button></div>
   <div class="muted">${esc(p.kod)} · ${esc(p.kat)} · ${esc(p.marka)} · Raf ${esc(p.raf)}</div>
   <div class="cards" style="margin-top:12px"><div class="card"><div class="l">Stok</div><div class="v ${s<=p.min?"neg":""}">${s}</div></div><div class="card"><div class="l">Liste fiyatı</div><div class="v">${money(p.fiyat)}</div></div><div class="card"><div class="l">Alt sınır</div><div class="v">${p.min}</div></div></div>
-  ${ls?`<div class="last"><b>Son satış:</b> ${fd(ls.tarih)} · ${esc(ls.musteri)} · ${ls.adet} adet · birim ${money(ls.fiyat)}</div>`:'<div class="last">Bu ürün henüz satılmadı.</div>'}
-  <h2>Ürün geçmişi</h2><div class="tw"><table><tr><th>Tarih</th><th>Hareket</th><th class="n">Adet</th><th>Kime / nereden</th><th>Belge</th><th>Kaydeden</th></tr>
+  ${ls?`<div class="last"><b>Son satış:</b> ${fd(ls.tarih)} · ${esc(ls.musteri)} · ${ls.adet} adet · birim ${money(ls.fiyat)} (indirim sonrası)</div>`:'<div class="last">Bu ürün henüz satılmadı.</div>'}
+  <h2>Ürün geçmişi</h2><div class="tw"><table><tr><th>Tarih</th><th>Hareket</th><th class="n">Adet</th><th>Kime / nereden</th><th>Fatura</th><th>Kaydeden</th></tr>
   ${h.map(m=>`<tr><td>${fd(m.tarih)}</td><td>${esc(m.tip)}</td><td class="n ${m.adet>0?"pos":"neg"}">${m.adet>0?"+":""}${m.adet}</td><td>${esc(m.kim)}</td><td>${esc(m.belge||"-")}</td><td>${esc(m.kul)}</td></tr>`).join("")}</table></div>`);
 }
 function productForm(){
@@ -326,39 +439,66 @@ function saveProduct(){
   const st=Number(g("f_stok"));if(st>0)addMov(id,"Açılış",st,"Elle açılış kaydı","",todayStr(),S.user);
   save();closeModal();render();
 }
+
+function customerForm(e){
+  const c=e?customers().find(x=>x.ad===dec(e)):null;
+  modal(`<h2>${c?"Cari hesap bilgileri":"Yeni cari hesap"}</h2><div class="grid2">
+  <label>Ad Soyad / Firma<input id="c_ad" value="${esc(c?c.ad:"")}" ${c?"readonly":""}></label><label>Telefon<input id="c_tel" value="${esc(c?c.tel:"")}"></label>
+  <label>Adres<input id="c_adres" value="${esc(c?c.adres:"")}"></label><label>Vergi no / kimlik no<input id="c_vergi" value="${esc(c?c.vergi:"")}"></label>
+  <label style="grid-column:1/-1">Not<input id="c_not" value="${esc(c?c.not:"")}"></label></div>
+  <div style="margin-top:14px;text-align:right"><button class="btn s" onclick="closeModal()">Vazgeç</button> <button class="btn" onclick="saveCustomer('${c?enc(c.ad):""}')">Kaydet</button></div>`);
+}
+function saveCustomer(e){
+  const g=i=>document.getElementById(i).value.trim();
+  if(e){const ad=dec(e);let c=S.customers.find(x=>x.ad===ad);if(!c){c={ad,tel:"",adres:"",vergi:"",not:""};S.customers.push(c)}
+    Object.assign(c,{tel:g("c_tel"),adres:g("c_adres"),vergi:g("c_vergi"),not:g("c_not")});save();closeModal();render();return cariDetail(e)}
+  const ad=g("c_ad");if(!ad)return alert("Ad Soyad / Firma zorunlu.");
+  if(customers().some(c=>norm(c.ad)===norm(ad)))return alert("Bu isimde bir cari hesap zaten var.");
+  S.customers.push({ad,tel:g("c_tel"),adres:g("c_adres"),vergi:g("c_vergi"),not:g("c_not")});save();closeModal();render();
+}
 function cariDetail(e){
   const ad=dec(e),sales=S.sales.filter(s=>s.musteri===ad&&!s.iptal),c=customers().find(x=>x.ad===ad);
-  const open=sales.filter(s=>rest(s)>0);
-  modal(`<div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(ad)}</h2><button class="btn s sm" onclick="closeModal()">Kapat</button></div>
-  <div class="cards" style="margin-top:12px"><div class="card"><div class="l">Toplam satış</div><div class="v">${money(c.satis)}</div></div><div class="card"><div class="l">Ödenen</div><div class="v">${money(c.odenen)}</div></div><div class="card"><div class="l">Borcu</div><div class="v ${c.borc>0?"neg":"pos"}">${money(c.borc)}</div></div></div>
-  ${open.length?`<div class="panel" style="background:var(--bg)"><h2>Ödeme al</h2><div class="grid2"><label>Hangi belge<select id="p_no">${open.map(s=>`<option value="${s.no}">${s.no} · kalan ${money(rest(s))}</option>`).join("")}</select></label><label>Tutar (₺)<input id="p_t" type="number" min="0" step="0.01"></label><label>Ödeme tarihi<input id="p_d" type="date" value="${todayStr()}"></label><label>Yöntem<select id="p_y"><option>Nakit</option><option>Kart</option><option>Havale</option><option>Çek</option></select></label></div><div style="margin-top:10px"><button class="btn" onclick="addPay('${enc(ad)}')">Ödemeyi kaydet</button></div></div>`:""}
-  <h2>Satışlar ve ödemeler</h2><div class="tw"><table><tr><th>Belge</th><th>Satış tarihi</th><th class="n">Toplam</th><th>Ödemeler (tarih · tutar)</th><th class="n">Kalan</th></tr>
-  ${sales.map(s=>`<tr><td>${s.no}</td><td>${fd(s.tarih)}</td><td class="n">${money(total(s))}</td><td>${s.odemeler.map(o=>`${fd(o.tarih)} · ${money(o.tutar)} <span class="muted">(${esc(o.yontem)})</span>`).join("<br>")||'<span class="muted">Ödeme yok</span>'}</td><td class="n ${rest(s)>0?"neg":""}">${money(rest(s))}</td></tr>`).join("")}</table></div>
+  const open=sales.filter(s=>rest(s)>0),iades=S.iades.filter(i=>i.musteri===ad),refs=S.refunds.filter(f=>f.musteri===ad);
+  modal(`<div class="row" style="justify-content:space-between"><h2 style="margin:0">${esc(ad)}</h2><span><button class="btn s sm" onclick="customerForm('${enc(ad)}')">Bilgileri düzenle</button> <button class="btn s sm" onclick="closeModal()">Kapat</button></span></div>
+  <div class="muted">${esc(c.tel||"Telefon yok")} · ${esc(c.adres||"Adres yok")}${c.vergi?" · "+esc(c.vergi):""}${c.not?" · "+esc(c.not):""}</div>
+  <div class="cards" style="margin-top:12px"><div class="card"><div class="l">Net satış (iade düşülmüş)</div><div class="v">${money(c.satis-c.iade)}</div></div><div class="card"><div class="l">Ödenen</div><div class="v">${money(c.odenen-c.iadeOde)}</div></div><div class="card"><div class="l">Bakiye</div><div class="v">${c.borc>0?`<span class="neg">Borcu ${money(c.borc)}</span>`:c.borc<0?`<span class="pos">Alacağı ${money(-c.borc)}</span>`:'<span class="pos">Borcu yok</span>'}</div></div></div>
+  ${open.length?`<div class="panel" style="background:var(--bg)"><h2>Ödeme al</h2><div class="grid2"><label>Hangi fatura<select id="p_no">${open.map(s=>`<option value="${s.no}">${s.no} · kalan ${money(rest(s))}</option>`).join("")}</select></label><label>Tutar (₺)<input id="p_t" type="number" min="0" step="0.01"></label><label>Ödeme tarihi<input id="p_d" type="date" value="${todayStr()}"></label><label>Yöntem<select id="p_y">${YONTEM.map(y=>`<option>${y}</option>`).join("")}</select></label></div><div style="margin-top:10px"><button class="btn" onclick="addPay('${enc(ad)}')">Ödemeyi kaydet</button></div></div>`:""}
+  ${c.borc<0?`<div class="panel" style="background:var(--bg)"><h2>Müşteriye para iadesi yap</h2><div class="grid2"><label>Tutar (₺)<input id="rf_t" type="number" min="0" step="0.01" value="${-c.borc}"></label><label>Yöntem<select id="rf_y">${YONTEM.map(y=>`<option>${y}</option>`).join("")}</select></label></div><div style="margin-top:10px"><button class="btn" onclick="addRefund('${enc(ad)}')">Para iadesini kaydet</button></div></div>`:""}
+  <h2>Faturalar ve ödemeler</h2><div class="tw"><table><tr><th>Fatura</th><th>Tarih</th><th class="n">Toplam</th><th>Ödemeler (tarih · tutar · yöntem)</th><th class="n">Kalan</th></tr>
+  ${sales.map(s=>`<tr><td>${s.no}</td><td>${fd(s.tarih)}</td><td class="n">${money(total(s))}${iadeOf(s)?`<div class="muted">iade -${money(iadeOf(s))}</div>`:""}</td><td>${s.odemeler.map(o=>`${fd(o.tarih)} · ${money(o.tutar)} <span class="muted">(${esc(o.yontem)})</span>`).join("<br>")||'<span class="muted">Ödeme yok</span>'}</td><td class="n ${rest(s)>0?"neg":""}">${money(rest(s))}</td></tr>`).join("")||'<tr><td colspan="5" class="empty">Henüz fatura yok</td></tr>'}</table></div>
+  ${iades.length||refs.length?`<h2 style="margin-top:14px">İadeler</h2><div class="tw"><table>${iades.map(i=>`<tr><td>${i.no}</td><td>${fd(i.tarih)}</td><td class="n neg">-${money(iadeTotal(i))}</td></tr>`).join("")}${refs.map(f=>`<tr><td>Para iadesi</td><td>${fd(f.tarih)} · ${esc(f.yontem)}</td><td class="n">${money(f.tutar)}</td></tr>`).join("")}</table></div>`:""}
   <div style="margin-top:12px"><button class="btn s" onclick="statement('${enc(ad)}')">Cari ekstre yazdır</button></div>`);
 }
 function addPay(e){const ad=dec(e),no=document.getElementById("p_no").value,t=Number(document.getElementById("p_t").value),d=document.getElementById("p_d").value;
   const s=S.sales.find(x=>x.no===no);if(!s)return;if(!(t>0))return alert("Tutarı girin.");if(!d)return alert("Ödeme tarihini seçin.");if(t>rest(s))return alert("Tutar kalan borçtan büyük olamaz (kalan: "+money(rest(s))+").");
   s.odemeler.push({tarih:d,tutar:t,yontem:document.getElementById("p_y").value,kul:S.user});save();render();cariDetail(e)}
+function addRefund(e){const ad=dec(e),t=Number(document.getElementById("rf_t").value);if(!(t>0))return alert("Tutarı girin.");
+  const c=customers().find(x=>x.ad===ad);if(t>-c.borc)return alert("Tutar müşterinin alacağını ("+money(-c.borc)+") geçemez.");
+  S.refunds.push({musteri:ad,tarih:todayStr(),tutar:t,yontem:document.getElementById("rf_y").value,kul:S.user});save();render();cariDetail(e)}
 function statement(e){
   const ad=dec(e),sales=S.sales.filter(s=>s.musteri===ad&&!s.iptal),c=customers().find(x=>x.ad===ad);
   closeModal();window._doc=null;
+  const rows=[...sales.flatMap(s=>[{t:s.tarih,a:"Satış "+s.no,b:total(s),o:0},...s.odemeler.map(o=>({t:o.tarih,a:`Ödeme (${o.yontem}) ${s.no}`,b:0,o:o.tutar}))]),...S.iades.filter(i=>i.musteri===ad).map(i=>({t:i.tarih,a:"İade "+i.no,b:0,o:iadeTotal(i)})),...S.refunds.filter(f=>f.musteri===ad).map(f=>({t:f.tarih,a:`Para iadesi (${f.yontem})`,b:f.tutar,o:0}))].sort((x,y)=>x.t.localeCompare(y.t));
   document.getElementById("main").innerHTML=`<div class="row noprint"><button class="btn s" onclick="go('cari')">← Geri</button><button class="btn" onclick="window.print()">A4 yazdır / PDF</button></div>
   <div class="sheet"><div class="head"><div><img src="${LOGO}" alt="Kayıranlar Otomotiv"><div>(örnek adres satırı)</div></div><div style="text-align:right"><h3>CARİ EKSTRE</h3><div>Tarih: ${fd(todayStr())}</div></div></div>
   <div style="margin-bottom:12px">Müşteri: <b>${esc(ad)}</b></div>
-  <table><tr><th>Tarih</th><th>Belge / işlem</th><th class="n">Borç</th><th class="n">Ödeme</th></tr>
-  ${sales.flatMap(s=>[{t:s.tarih,a:"Satış "+s.no,b:total(s),o:0},...s.odemeler.map(o=>({t:o.tarih,a:"Ödeme ("+o.yontem+") "+s.no,b:0,o:o.tutar}))]).sort((x,y)=>x.t.localeCompare(y.t)).map(r=>`<tr><td>${fd(r.t)}</td><td>${esc(r.a)}</td><td class="n">${r.b?money(r.b):""}</td><td class="n">${r.o?money(r.o):""}</td></tr>`).join("")}</table>
-  <div style="max-width:300px;margin-left:auto;margin-top:12px"><div class="tot"><span>Toplam satış</span><span>${money(c.satis)}</span></div><div class="tot"><span>Toplam ödeme</span><span>${money(c.odenen)}</span></div><div class="tot g"><span>GÜNCEL BORÇ</span><span>${money(c.borc)}</span></div></div></div>`;
+  <table><tr><th>Tarih</th><th>İşlem</th><th class="n">Borç</th><th class="n">Ödeme / iade</th></tr>
+  ${rows.map(r=>`<tr><td>${fd(r.t)}</td><td>${esc(r.a)}</td><td class="n">${r.b?money(r.b):""}</td><td class="n">${r.o?money(r.o):""}</td></tr>`).join("")}</table>
+  <div style="max-width:320px;margin-left:auto;margin-top:12px"><div class="tot"><span>Net satış</span><span>${money(c.satis-c.iade)}</span></div><div class="tot"><span>Toplam ödeme</span><span>${money(c.odenen-c.iadeOde)}</span></div><div class="tot g"><span>${c.borc<0?"MÜŞTERİ ALACAĞI":"GÜNCEL BORÇ"}</span><span>${money(Math.abs(c.borc))}</span></div></div></div>`;
 }
 function download(name,rows){const csv="﻿"+rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(";")).join("\r\n");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));a.download=name;document.body.appendChild(a);a.click();a.remove()}
-function csvDay(d){const rows=[["Tarih","Belge no","Müşteri","Toplam","Alınan ödeme","Kalan","Resmi/fatura notu"]];
-  S.sales.filter(s=>s.tarih===d&&!s.iptal).forEach(s=>rows.push([fd(s.tarih),s.no,s.musteri,total(s),paid(s),rest(s),""]));
+function csvDay(d){const rows=[["Tür","Tarih","Fatura no","Müşteri","Tutar","Ödeme yöntemi"]];
+  S.sales.filter(s=>s.tarih===d&&!s.iptal).forEach(s=>rows.push(["Satış",fd(s.tarih),s.no,s.musteri,total(s),""]));
+  S.iades.filter(i=>i.tarih===d).forEach(i=>rows.push(["İade",fd(i.tarih),i.no,i.musteri,-iadeTotal(i),""]));
+  S.sales.forEach(s=>{if(s.iptal)return;s.odemeler.filter(o=>o.tarih===d).forEach(o=>rows.push(["Tahsilat",fd(o.tarih),s.no,s.musteri,o.tutar,o.yontem]))});
+  S.refunds.filter(f=>f.tarih===d).forEach(f=>rows.push(["Para iadesi",fd(f.tarih),"",f.musteri,-f.tutar,f.yontem]));
   download("gun-sonu-"+d+".csv",rows)}
 function csvStock(){const rows=[["Kod","Ürün","Kategori","Marka","Raf","Stok","Alt sınır","Fiyat"]];
   S.products.forEach(p=>rows.push([p.kod,p.ad,p.kat,p.marka,p.raf,stok(p.id),p.min,p.fiyat]));download("stok-listesi-"+todayStr()+".csv",rows)}
 
 document.getElementById("logoImg").src=LOGO_LIGHT;
-S=load();if(!S||!S.products)seed();
+S=load();if(!S||!S.products)seed();else migrate();
 render();
 </script>
 </body>
